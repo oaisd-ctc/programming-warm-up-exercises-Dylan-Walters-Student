@@ -12,7 +12,7 @@ namespace NoviceChallenges
 
             // Add
             Console.WriteLine("Add ---------------------------------");
-            Console.WriteLine(Add(1, 2)); 
+            Console.WriteLine(Add(1, 2));
             Console.WriteLine(Add(2, 1));
             Console.WriteLine(Add(0, 0));
             Console.WriteLine(Add(10, 10) + " \n");
@@ -88,10 +88,10 @@ namespace NoviceChallenges
 
             //Largest in Array
             Console.WriteLine("Largest In Array ---------------------------------");
-            Console.WriteLine(LargestInArray(new int[] {1, 2, 3}));
-            Console.WriteLine(LargestInArray(new int[] {3, 2, 1}));
-            Console.WriteLine(LargestInArray(new int[] {10, 20, 30}));
-            Console.WriteLine(LargestInArray(new int[] {25, 93, 28, 44, 21}) + " \n");
+            Console.WriteLine(LargestInArray(new int[] { 1, 2, 3 }));
+            Console.WriteLine(LargestInArray(new int[] { 3, 2, 1 }));
+            Console.WriteLine(LargestInArray(new int[] { 10, 20, 30 }));
+            Console.WriteLine(LargestInArray(new int[] { 25, 93, 28, 44, 21 }) + " \n");
 
             //Is Palindrome
             Console.WriteLine("Is Palindrome ---------------------------------");
@@ -99,15 +99,15 @@ namespace NoviceChallenges
             Console.WriteLine(IsPalindrome("ooo"));
             Console.WriteLine(IsPalindrome("tacocat"));
             Console.WriteLine(IsPalindrome("TaCocAT"));
-            Console.WriteLine(IsPalindrome("ooguim boga")+ " \n");
+            Console.WriteLine(IsPalindrome("ooguim boga") + " \n");
 
             //Array Sum
             Console.WriteLine("Array Sum ---------------------------------");
-            Console.WriteLine(ArraySum(new int[] {1, 2, 3}));
-            Console.WriteLine(ArraySum(new int[] {3, 2, 1}));
-            Console.WriteLine(ArraySum(new int[] {10, 20, 30}));
-            Console.WriteLine(ArraySum(new int[] {0, 0, 0}));
-            Console.WriteLine(ArraySum(new int[] {25, 93, 28, 44, 21}) + " \n");
+            Console.WriteLine(ArraySum(new int[] { 1, 2, 3 }));
+            Console.WriteLine(ArraySum(new int[] { 3, 2, 1 }));
+            Console.WriteLine(ArraySum(new int[] { 10, 20, 30 }));
+            Console.WriteLine(ArraySum(new int[] { 0, 0, 0 }));
+            Console.WriteLine(ArraySum(new int[] { 25, 93, 28, 44, 21 }) + " \n");
 
             //Char Count
             Console.WriteLine("Char Count ---------------------------------");
@@ -134,40 +134,38 @@ namespace NoviceChallenges
         // 1. Return the sum of two numbers.
         public static int Add(int a, int b)
         {
-            int sum = a + b;
-            return sum;
+            return a + b;
         }
 
         // 2. Given an integer, return true if it's even, else return false.
         public static bool IsEven(int number)
         {
-            if (number % 2 == 0)
-                return true;
-            return false;
+            return number % 2 == 0;
         }
 
         // 3. Return the largest of three numbers.
         public static int MaxOfThree(int a, int b, int c)
         {
-            int max = Math.Max(a, Math.Max(b, c));
-            return max;
+            return Math.Max(a, Math.Max(b, c));
         }
 
         // 4. Return the length of the given string.
         public static int StringLength(string s)
         {
-            int length = s.Length;
-            return length;
+            return s.Length;
         }
 
         // 5. Return true if the string starts with "Hello", otherwise return false.
         public static bool StartsHello(string s)
         {
             string trimmed = s.Trim();
-            if(trimmed.StartsWith("Hello") || trimmed.StartsWith("hello"))
+            if (trimmed.StartsWith("Hello") || trimmed.StartsWith("hello"))
                 return true;
 
             return false;
+
+            // Additional answer:
+            return trimmed.ToLower().StartsWith("hello");
         }
 
         // 6. Reverse a given string.
@@ -180,14 +178,14 @@ namespace NoviceChallenges
 
         // 7. Return the factorial of a number.
         public static int Factorial(int n)
-        {   
-            if (n == 0) 
+        {
+            if (n == 0)
                 return 1;
 
             int sum = 1;
             for (int i = 1; i <= n; i++)
             {
-                sum = sum * i;
+                sum *= i;
             }
 
             return sum;
@@ -195,7 +193,7 @@ namespace NoviceChallenges
 
         public static int FacortialButRecursive(int n)
         {
-            if(n == 1 || n == 0)
+            if (n == 1 || n == 0)
                 return 1;
             else
                 return n * FacortialButRecursive(n - 1);
@@ -208,7 +206,7 @@ namespace NoviceChallenges
             if (number == 2) return true;
             for (int i = 2; i < number; i++)
             {
-                if (number % i == 0) 
+                if (number % i == 0) // This logic is flawed. This will return true for any number not divisible by 2. Test with 9 as the argument
                     return false;
                 else
                     return true;
@@ -218,14 +216,14 @@ namespace NoviceChallenges
 
         // 9. Return the nth Fibonacci number.
         public static int Fibonacci(int n)
-        {   
-            if(n <= 1)
+        {
+            if (n <= 1)
                 return n;
-                
+
             int n1 = 0;
             int n2 = 1;
             int result = 0;
-            for(int i = 2; i < n + 1; i++)
+            for (int i = 2; i < n + 1; i++)
             {
                 result = n1 + n2;
                 n1 = n2;
@@ -257,11 +255,11 @@ namespace NoviceChallenges
             for (int i = 0; i < middle; i++)
             {
                 j--;
-                if (s[i] != s[j]) 
+                if (s[i] != s[j])
                 {
                     return false;
                 }
-            }  
+            }
             return true;
         }
 
@@ -269,7 +267,7 @@ namespace NoviceChallenges
         public static int ArraySum(int[] numbers)
         {
             int sum = 0;
-            foreach(int num in numbers)
+            foreach (int num in numbers)
             {
                 sum += num;
             }
@@ -281,9 +279,9 @@ namespace NoviceChallenges
         {
             string lower = s.ToLower();
             int count = 0;
-            foreach(char character in lower)
+            foreach (char character in lower)
             {
-                if(character == c)
+                if (character == c)
                 {
                     count++;
                 }
@@ -305,18 +303,18 @@ namespace NoviceChallenges
             if (trimmed.Length <= 1) return s;
 
             char firstChar = trimmed[0];
-            char lastChar = trimmed[trimmed.Length -1];
+            char lastChar = trimmed[trimmed.Length - 1];
             char[] swappedEnds = new char[trimmed.Length];
             swappedEnds[0] = lastChar;
 
-            for (int i = 1; i < trimmed.Length -1; i++)
+            for (int i = 1; i < trimmed.Length - 1; i++)
             {
                 swappedEnds[i] = s[i];
             }
 
-            swappedEnds[swappedEnds.Length -1] = firstChar;
+            swappedEnds[swappedEnds.Length - 1] = firstChar;
 
-            string final = new string (swappedEnds);
+            string final = new string(swappedEnds);
 
             return final; //oellh
         }
